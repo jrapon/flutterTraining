@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:tapwa/widget/register.dart';
 
 class Authen extends StatefulWidget {
   @override
@@ -12,29 +13,61 @@ class _AuthenState extends State<Authen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(
-        child: SingleChildScrollView(
-          child: Column(
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              buildContainer(),
-              buildText(),
-              buildContainerUser(),
-              buildContainerPassword(),
-              buildLogin()
-            ],
+      body: Container(
+        decoration: BoxDecoration(
+          gradient: RadialGradient(
+            center: Alignment(0, -0.5),
+            colors: [Colors.white, Colors.lime],
+          ),
+        ),
+        child: Center(
+          child: SingleChildScrollView(
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                buildContainer(),
+                buildText(),
+                buildContainerUser(),
+                buildContainerPassword(),
+                buildLogin(),
+                buildFlatButton()
+              ],
+            ),
           ),
         ),
       ),
     );
   }
 
+  FlatButton buildFlatButton() {
+    return FlatButton(
+      onPressed: () {
+        Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => Register(),
+            ));
+      },
+      child: Text(
+        'New Register',
+        style: TextStyle(color: Colors.green),
+      ),
+    );
+  }
+
   Container buildLogin() {
     return Container(
-              margin: EdgeInsets.only(top: 16),
-              width: 250,
-              child: RaisedButton(onPressed: null,child: Text('Login'),),
-            );
+      margin: EdgeInsets.only(top: 16),
+      width: 250,
+      child: RaisedButton(
+        color: Colors.blue.shade700,
+        onPressed: () {},
+        child: Text(
+          'Login',
+          style: TextStyle(color: Colors.white),
+        ),
+      ),
+    );
   }
 
   Container buildContainerUser() {
