@@ -17,7 +17,7 @@ class _AuthenState extends State<Authen> {
         decoration: BoxDecoration(
           gradient: RadialGradient(
             center: Alignment(0, -0.5),
-            colors: [Colors.white, Colors.lime],
+            colors: [Colors.blue.shade200, Colors.blue.shade300],
           ),
         ),
         child: Center(
@@ -50,7 +50,7 @@ class _AuthenState extends State<Authen> {
       },
       child: Text(
         'New Register',
-        style: TextStyle(color: Colors.green),
+        style: TextStyle(color: Colors.pink),
       ),
     );
   }
@@ -74,6 +74,7 @@ class _AuthenState extends State<Authen> {
     return Container(
       margin: EdgeInsets.only(top: 16),
       width: 250,
+      color: Colors.blue.shade200,
       child: TextField(
         decoration: InputDecoration(
           labelText: 'User :',
@@ -87,6 +88,7 @@ class _AuthenState extends State<Authen> {
     return Container(
       margin: EdgeInsets.only(top: 16),
       width: 250,
+      color: Colors.blue.shade200,
       child: TextField(
         obscureText: statusRedEye,
         decoration: InputDecoration(
@@ -105,11 +107,11 @@ class _AuthenState extends State<Authen> {
   }
 
   Text buildText() => Text(
-        'Ta กปภ.',
+        'Ta PWA',
         style: GoogleFonts.prompt(
             textStyle: TextStyle(
           fontSize: 30,
-          color: Colors.blue[400],
+          color: Colors.white,
           fontStyle: FontStyle.italic,
           fontWeight: FontWeight.bold,
         )),
