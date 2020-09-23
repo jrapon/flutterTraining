@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "139922501606",
+    "firebase_url": "https://tapwa-4c5c6.firebaseio.com",
+    "project_id": "tapwa-4c5c6",
+    "storage_bucket": "tapwa-4c5c6.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:139922501606:android:11b65ee7a9c31412a0b027",
+        "android_client_info": {
+          "package_name": "com.pwacoth.tapwa"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "139922501606-m97e8qhb7558ee1nqt75og2q2aebn95s.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCJysrdrjVuzXrbIGa4Pq-H_nreRUL7lYY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "139922501606-m97e8qhb7558ee1nqt75og2q2aebn95s.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
