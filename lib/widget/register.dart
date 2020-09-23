@@ -1,5 +1,6 @@
 import 'dart:io';
 
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_storage/firebase_storage.dart';
@@ -7,6 +8,7 @@ import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:location/location.dart';
+import 'package:tapwa/models/user_model.dart';
 import 'package:tapwa/utility/normal_dialog.dart';
 
 class Register extends StatefulWidget {
@@ -292,5 +294,21 @@ class _RegisterState extends State<Register> {
     StorageUploadTask task = reference.putFile(file);
     urlPath = await (await task.onComplete).ref.getDownloadURL();
     print('urlPath=$urlPath');
+    insertDataToFirebase();
+  }
+
+  Future<Null> insertDataToFirebase() async {
+    UserModel model = UserModel(
+        name: name,
+        path: urlPath,
+        position: choosePosition,
+        lat: lat.toString(),
+        lng: long.toString());
+    Map<String, dynamic> map = model.toJson();
+    await FirebaseFirestore.instance
+        .collection('UserTa')
+        .doc(uid)
+        .set(map)
+        .then((value) => Navigator.pop(context));
   }
 }
